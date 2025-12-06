@@ -62,7 +62,7 @@ const OrderSchema = new Schema<Order>(
 // Indexes for efficient queries
 OrderSchema.index({ retailerId: 1, createdAt: -1 });
 OrderSchema.index({ distributorId: 1, createdAt: -1 });
-OrderSchema.index({ orderNumber: 1 });
+
 
 const OrderModel: Model<Order> = mongoose.models.Order || mongoose.model<Order>('Order', OrderSchema);
 
