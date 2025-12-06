@@ -120,11 +120,7 @@ export default function AddProductPage() {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring" as const,
-                stiffness: 100
-            }
+            opacity: 1
         }
     };
 
