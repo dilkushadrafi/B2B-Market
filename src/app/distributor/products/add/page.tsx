@@ -106,7 +106,7 @@ export default function AddProductPage() {
         }
     };
 
-    const containerVariants: Variants = {
+    const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -116,7 +116,7 @@ export default function AddProductPage() {
         }
     };
 
-    const itemVariants: Variants = {
+    const itemVariants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
