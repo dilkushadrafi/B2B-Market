@@ -7,7 +7,7 @@ export interface Message {
     _id: string;
     conversationId: string;
     senderId: string;
-    senderRole: 'retailer' | 'distributor';
+    senderRole: 'retailer' | 'distributor' | 'system';
     senderName: string;
     message: string;
     read: boolean;

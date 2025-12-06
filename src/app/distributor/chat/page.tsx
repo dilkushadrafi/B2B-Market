@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 import { useChat } from '@/hooks/useChat';
@@ -16,7 +16,7 @@ interface Retailer {
     email: string;
 }
 
-export default function DistributorChatPage() {
+function ChatContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const { user, isAuthenticated, token } = useAuthStore();
@@ -367,5 +367,17 @@ export default function DistributorChatPage() {
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+export default function DistributorChatPage() {
+    return (
+        <Suspense fallback={
+            <div className="flex items-center justify-center h-[calc(100vh-4rem)] bg-white rounded-2xl shadow-xl">
+                <Loader2 className="w-8 h-8 animate-spin text-indigo-500" />
+            </div>
+        }>
+            <ChatContent />
+        </Suspense>
     );
 }

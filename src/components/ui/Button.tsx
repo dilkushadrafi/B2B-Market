@@ -15,6 +15,7 @@ interface ButtonProps extends HTMLMotionProps<'button'> {
     isLoading?: boolean;
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export function Button({
