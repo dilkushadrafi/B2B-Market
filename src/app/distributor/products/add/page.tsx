@@ -116,11 +116,14 @@ export default function AddProductPage() {
         }
     };
 
-    const itemVariants = {
+    const productItemVariants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
-            opacity: 1
+            opacity: 1,
+            transition: {
+                duration: 0.3
+            }
         }
     };
 
@@ -132,7 +135,7 @@ export default function AddProductPage() {
             className="max-w-5xl mx-auto space-y-8 pb-12"
         >
             {/* Header */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-2">
+            <motion.div variants={productItemVariants} className="flex flex-col gap-2">
                 <Link
                     href="/distributor/dashboard"
                     className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors w-fit group"
@@ -156,7 +159,7 @@ export default function AddProductPage() {
                     {/* Left Column - Main Info */}
                     <div className="lg:col-span-2 space-y-8">
                         {/* Basic Information Card */}
-                        <motion.div variants={itemVariants}>
+                        <motion.div variants={productItemVariants}>
                             <Card className="overflow-hidden border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300">
                                 <div className="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
                                     <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
@@ -195,7 +198,7 @@ export default function AddProductPage() {
                         </motion.div>
 
                         {/* Images Card */}
-                        <motion.div variants={itemVariants}>
+                        <motion.div variants={productItemVariants}>
                             <Card className="overflow-hidden border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300">
                                 <div className="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
                                     <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
@@ -267,7 +270,7 @@ export default function AddProductPage() {
                     {/* Right Column - Details & Actions */}
                     <div className="space-y-8">
                         {/* Category & Unit */}
-                        <motion.div variants={itemVariants}>
+                        <motion.div variants={productItemVariants}>
                             <Card className="overflow-hidden border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300">
                                 <div className="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
                                     <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
@@ -327,7 +330,7 @@ export default function AddProductPage() {
                         </motion.div>
 
                         {/* Pricing & Stock */}
-                        <motion.div variants={itemVariants}>
+                        <motion.div variants={productItemVariants}>
                             <Card className="overflow-hidden border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-300">
                                 <div className="p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
                                     <h2 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
@@ -379,7 +382,7 @@ export default function AddProductPage() {
                         </motion.div>
 
                         {/* Actions */}
-                        <motion.div variants={itemVariants} className="sticky top-6">
+                        <motion.div variants={productItemVariants} className="sticky top-6">
                             {error && (
                                 <motion.div
                                     initial={{ opacity: 0, y: -10 }}
